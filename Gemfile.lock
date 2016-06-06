@@ -2,8 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     coderay (1.1.1)
-    equalizer (0.0.11)
-    inflecto (0.0.2)
     method_source (0.8.2)
     mini_portile2 (2.0.0)
     nokogiri (1.6.7.2)
@@ -12,33 +10,13 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    puma (3.4.0)
     rack (1.6.4)
     roda (2.14.0)
       rack
-    rom (0.9.1)
-      equalizer (~> 0.0, >= 0.0.9)
-      rom-mapper (~> 0.2, >= 0.2.0)
-      rom-support (~> 0.1, >= 0.1.0)
-      transproc (~> 0.3, >= 0.3.0)
-    rom-mapper (0.2.0)
-      equalizer (~> 0.0, >= 0.0.10)
-      rom-support (~> 0.1, >= 0.1.0)
-      transproc (~> 0.3)
-    rom-roda (0.2.0)
-      inflecto
-      rom (~> 0.9, >= 0.9.0)
-    rom-sql (0.6.1)
-      equalizer (~> 0.0, >= 0.0.9)
-      rom (~> 0.9, >= 0.9.0)
-      sequel (~> 4.18)
-    rom-support (0.1.0)
-      wisper (~> 1.6, >= 1.6.0)
-    sequel (4.35.0)
     shotgun (0.9.1)
       rack (>= 1.0)
     slop (3.6.0)
-    transproc (0.4.0)
-    wisper (1.6.1)
 
 PLATFORMS
   ruby
@@ -46,9 +24,8 @@ PLATFORMS
 DEPENDENCIES
   nokogiri
   pry
+  puma
   roda
-  rom-roda
-  rom-sql
   shotgun
 
 BUNDLED WITH
