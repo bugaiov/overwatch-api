@@ -5,7 +5,7 @@
 - `GET /profile/:battletag/stats` return only stats
 
 ## Response
-```json
+```javascript
 {
    "featured_stats": {
       "Eliminations - Average": "8.15",
