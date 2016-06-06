@@ -6,11 +6,11 @@ class App < Roda
   plugin :default_headers,
     'Access-Control-Allow-Origin'  => 'https://overwatchprofile.com',
     'Access-Control-Allow-Headers' => 'Authorization,Accepts,Content-Type,X-CSRF-Token,X-Requested-With',
-    'Access-Control-Allow-Methods' => 'GET,POST,PUT,DELETE,OPTIONS'
+    'Access-Control-Allow-Methods' => 'GET,POST,PUT,DELETE,OPTIONS' unless ENV['RACK_ENV'] = 'production'
 
   route do |r|
     r.root do
-      'home'
+      'Welcome to api.overwatchprofile.com!'
     end
 
     r.on 'profile/:battletag' do |battletag|
