@@ -15,11 +15,6 @@ class App < Roda
 
     r.on 'profile/:battletag' do |battletag|
       owp = OverwatchParser.new(battletag)
-      r.on 'stats' do
-        r.get do
-          ParsedPaclulator.stats(owp)
-        end
-      end
       r.get do
         ParsedPaclulator.everything(owp)
       end

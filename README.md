@@ -1,8 +1,7 @@
 # [api.overwatchprofile.com](http://api.overwatchprofile.com)
 
 ## Endpoints
-- `GET /profile/:battletag` return everything
-- `GET /profile/:battletag/stats` return only stats
+- `GET /profile/:battletag`
 
 ## Response
 ```javascript
