@@ -4,7 +4,7 @@ class App < Roda
   use Rack::Session::Cookie, secret: SecureRandom.hex
   plugin :json, content_type: 'application/json; charset=utf-8'
   plugin :default_headers,
-    'Access-Control-Allow-Origin'  => '*', #TODO: limit to one host
+    'Access-Control-Allow-Origin'  => 'https://overwatchprofile.com',
     'Access-Control-Allow-Headers' => 'Authorization,Accepts,Content-Type,X-CSRF-Token,X-Requested-With',
     'Access-Control-Allow-Methods' => 'GET,POST,PUT,DELETE,OPTIONS'
 
