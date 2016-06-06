@@ -1,4 +1,4 @@
-# API
+# [api.overwatchprofile.com](http://api.overwatchprofile.com)
 
 ## Endpoints
 - `GET /profile/:battletag` return everything
