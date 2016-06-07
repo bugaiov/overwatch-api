@@ -23,6 +23,14 @@ class OverwatchParser
     result_hash
   end
 
+  def level
+    @nokogiri_page.css('.u-vertical-center').text
+  end
+
+  def nickname
+    @nokogiri_page.css('.header-masthead').text
+  end
+
   # TOP HEROES
   def top_heros
     stats_i = 0
@@ -48,10 +56,22 @@ class OverwatchParser
     result_hash
   end
 
-  # TODO: ACHIEVEMENTS
   def achievements
-    # Implement...
-    {}
+    results = {}
+    @nokogiri_page.css('div[data-group-id="achievements"]').each_with_index do |x, i|
+      key = @nokogiri_page.css('#achievements-section option')[i].text
+      results[key] ||= []
+      x.css('.media-card').each do |xx|
+        #todo: consider if done  # Cannot do it yet. Needs JS to parse after....
+        results[key] << {
+          xx.css('.content').text => {
+            achived: !x.css('.media-card').last.attributes.to_s.include?('m-disabled'),
+            img: x.css('img').last['src']
+          }
+        }
+      end
+    end
+    results
   end
 
   #
@@ -93,6 +113,8 @@ class ParsedPaclulator
   end
   def self.everything(owp)
     {
+      nickname: owp.nickname,
+      level: owp.level,
       featured_stats: owp.featured_stats,
       top_heros: owp.top_heros,
       career_stats: owp.career_stats,

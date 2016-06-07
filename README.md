@@ -3,9 +3,14 @@
 ## Endpoints
 - `GET /profile/:battletag`
 
+## Example
+`curl -i http://localhost:9292/profile/buff-21986`
+
 ## Response
 ```javascript
 {
+   "nickname": "buff",
+   "level": "14",
    "featured_stats": {
       "Eliminations - Average": "8.15",
       "Damage Done - Average": "3,957",
@@ -288,7 +293,374 @@
          "Defensive Assists - Average": "0"
       }
    },
-   "achievements": {},
+   "achievements": {
+      "General": [
+         {
+            "Level 10": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         },
+         {
+            "Decorated": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         },
+         {
+            "The Friend Zone": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         },
+         {
+            "Centenary": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         },
+         {
+            "Level 25": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         },
+         {
+            "Level 50": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         },
+         {
+            "Undying": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         },
+         {
+            "The Path Is Closed": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         },
+         {
+            "Survival Expert": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         },
+         {
+            "Blackjack": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         },
+         {
+            "Decked Out": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000162.png"
+            }
+         }
+      ],
+      "Offense": [
+         {
+            "Die Die Die... Die": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "Slice and Dice": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "Their Own Worst Enemy": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "Waste Not, Want Not": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "Whoa There!": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "It's High Noon": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "Death From Above": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "Clearing the Area": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "Rocket Man": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "Target Rich Environment": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "Total Recall": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         },
+         {
+            "Special Delivery": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000016C.png"
+            }
+         }
+      ],
+      "Defense": [
+         {
+            "Triple Threat": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "Charge!": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "Simple Geometry": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "The Dragon Is Sated": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "Mine Like a Steel Trap": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "Roadkill": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "Ice Blocked": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "Cold Snap": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "Raid Wipe": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "Armor Up!": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "Did That Sting?": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         },
+         {
+            "Smooth as Silk": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000179.png"
+            }
+         }
+      ],
+      "Tank": [
+         {
+            "Shot Down": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000183.png"
+            }
+         },
+         {
+            "Game Over": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000183.png"
+            }
+         },
+         {
+            "I Am Your Shield": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000183.png"
+            }
+         },
+         {
+            "Storm, Earth and Fire": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000183.png"
+            }
+         },
+         {
+            "Giving You the Hook": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000183.png"
+            }
+         },
+         {
+            "Hog Wild": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000183.png"
+            }
+         },
+         {
+            "Mine Sweeper": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000183.png"
+            }
+         },
+         {
+            "Anger Management": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000183.png"
+            }
+         },
+         {
+            "Power Overwhelming": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000183.png"
+            }
+         },
+         {
+            "The Power of Attraction": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000183.png"
+            }
+         }
+      ],
+      "Support": [
+         {
+            "The Floor Is Lava": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000018B.png"
+            }
+         },
+         {
+            "Supersonic": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000018B.png"
+            }
+         },
+         {
+            "Group Health Plan": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000018B.png"
+            }
+         },
+         {
+            "Huge Rez": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000018B.png"
+            }
+         },
+         {
+            "The Car Wash": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000018B.png"
+            }
+         },
+         {
+            "Huge Success": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000018B.png"
+            }
+         },
+         {
+            "Rapid Discord": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000018B.png"
+            }
+         },
+         {
+            "The Iris Embraces You": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E6000000000018B.png"
+            }
+         }
+      ],
+      "Maps": [
+         {
+            "Lockdown": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000191.png"
+            }
+         },
+         {
+            "Double Cap": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000191.png"
+            }
+         },
+         {
+            "Escort Duty": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000191.png"
+            }
+         },
+         {
+            "Can't Touch This": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000191.png"
+            }
+         },
+         {
+            "Shutout": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000191.png"
+            }
+         },
+         {
+            "World Traveler": {
+               "achived": false,
+               "img": "https://d1u1mce87gyfbn.cloudfront.net/game/achievements/0x0E60000000000191.png"
+            }
+         }
+      ]
+   },
    "stats": {
       "total_games": 45,
       "win_loss": 24,
