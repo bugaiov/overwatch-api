@@ -13,8 +13,8 @@ class App < Roda
       'Welcome to api.overwatchprofile.com!'
     end
 
-    r.on 'profile/:battletag' do |battletag|
-      owp = OverwatchParser.new(battletag)
+    r.on 'profile/:platform/:region/:battletag' do |platform, region, battletag|
+      owp = OverwatchParser.new(platform, region, battletag)
       r.get do
         ParsedPaclulator.everything(owp)
       end

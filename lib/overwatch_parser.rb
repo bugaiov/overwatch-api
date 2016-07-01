@@ -2,21 +2,18 @@ require 'open-uri'
 require 'json'
 
 class OverwatchParser
-
-  def initialize(battletag)
+  def initialize(platform, region, battletag)
     battletag.gsub!('#','-') #TODO: F0002: Smarter, when # is in the nickname
     url = 'https://playoverwatch.com/en-us/career'
-    platform = 'pc'
-    region = 'eu'
     profile_page = [url, platform, region, battletag].join('/')
     puts "Opening: #{profile_page}"
     @nokogiri_page = Nokogiri::HTML(open(profile_page))
   end
 
   # FEATURED STATS
-  def featured_stats
+  def featured_stats(mode)
     result_hash = {}
-    cards = @nokogiri_page.css('#highlights-section .card-content')
+    cards = @nokogiri_page.css("##{mode} .card-content")
     cards.each do |card|
       result_hash.merge! card.css('p').text => card.css('h3').text
     end
@@ -32,7 +29,7 @@ class OverwatchParser
   end
 
   # TOP HEROES
-  def top_heros
+  def top_heros(mode)
     stats_i = 0
     stats = %w(
       time_played
@@ -45,7 +42,7 @@ class OverwatchParser
       objective_kills_average
     )
     result_hash = {}
-    heroes = @nokogiri_page.css('#top-heroes-section .bar-text')
+    heroes = @nokogiri_page.css("##{mode} .hero-comparison-section .bar-text")
     heroes.each_with_index do |hero, i|
       hero_name = hero.css('.title').text
       value = hero.css('.description').text
@@ -78,11 +75,10 @@ class OverwatchParser
   # CAREER STATS
   # Assumes full Battletag, PSN or Xbox Gamertag...
   #
-  def career_stats
+  def career_stats(mode)
     results_hash = {}
-    # Data tables with career stats
     data_tables = @nokogiri_page
-      .css('.js-stats.toggle-display.is-active')
+      .css("##{mode} .js-stats.toggle-display.is-active")
       .css('.data-table')
     data_tables.each do |table|
       table_name = table.css('thead th').text
@@ -97,11 +93,12 @@ class OverwatchParser
 end
 
 class ParsedPaclulator
-  def self.stats(owp)
-    total_games = owp.career_stats['Game']['Games Played'].to_i
-    games_won = owp.career_stats['Game']['Games Won'].to_i
-    total_score = owp.career_stats['Game']['Score']
-    time_payed = owp.career_stats['Game']['Time Played']
+  def self.stats(owp, mode)
+    return if owp.career_stats(mode) == {}
+    total_games = owp.career_stats(mode)['Game']['Games Played'].to_i
+    games_won = owp.career_stats(mode)['Game']['Games Won'].to_i
+    total_score = owp.career_stats(mode)['Game']['Score']
+    time_payed = owp.career_stats(mode)['Game']['Time Played']
     {
       total_games: total_games,
       win_loss: total_games - games_won,
@@ -113,13 +110,21 @@ class ParsedPaclulator
   end
   def self.everything(owp)
     {
+      quick_play: {
+        featured_stats: owp.featured_stats('quick-play'),
+        top_heros: owp.top_heros('quick-play'),
+        career_stats: owp.career_stats('quick-play'),
+        stats: stats(owp, 'quick-play')
+      },
+      competitive_play: {
+        featured_stats: owp.featured_stats('competitive-play'),
+        top_heros: owp.top_heros('competitive-play'),
+        career_stats: owp.career_stats('competitive-play'),
+        stats: stats(owp, 'competitive-play')
+      },
       nickname: owp.nickname,
       level: owp.level,
-      featured_stats: owp.featured_stats,
-      top_heros: owp.top_heros,
-      career_stats: owp.career_stats,
-      achievements: owp.achievements,
-      stats: stats(owp)
+      achievements: owp.achievements
     }
   end
 end
