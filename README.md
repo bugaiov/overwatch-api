@@ -1,13 +1,12 @@
-# [api.overwatchprofile.com](http://api.overwatchprofile.com)
-
-An overwatch api json backend for ruby
+# Overwatch Public API
+> An overwatch api json backend for ruby
 
 ## Endpoints
 - `GET /profile/:platform/:region/:battletag`
 
 ## Example
-- `curl -i http://api.overwatchprofile.com/profile/pc/eu/buff-21986`
-- [http://api.overwatchprofile.com/profile/pc/eu/buff-21986](http://api.overwatchprofile.com/profile/pc/eu/buff-21986)
+- `curl -i https://overwatch-api-ruby.herokuapp.com/profile/pc/eu/buff-21986`
+- [https://overwatch-api-ruby.herokuapp.com/profile/pc/eu/buff-21986](https://overwatch-api-ruby.herokuapp.com/profile/pc/eu/buff-21986)
 
 ## Page Gets Parsed From
 - [https://playoverwatch.com/en-us/career/pc/eu/buff-21986](https://playoverwatch.com/en-us/career/pc/eu/buff-21986)
