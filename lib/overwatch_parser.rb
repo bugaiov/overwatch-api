@@ -106,22 +106,22 @@ class ParsedPaclulator
     }
   end
   def self.everything(owp)
-    {
-      quick_play: {
-        featured_stats: owp.featured_stats('quick-play'),
-        top_heroes: owp.top_heroes('quick-play'),
-        career_stats: owp.career_stats('quick-play'),
-        stats: stats(owp, 'quick-play')
-      },
-      competitive_play: {
-        featured_stats: owp.featured_stats('competitive-play'),
-        top_heroes: owp.top_heroes('competitive-play'),
-        career_stats: owp.career_stats('competitive-play'),
-        stats: stats(owp, 'competitive-play')
-      },
+    modes = ['quick-play', 'competative-play']
+    result = {
       nickname: owp.nickname,
       level: owp.level,
       achievements: owp.achievements
     }
+    modes.each do |mode|
+      result.merge!({
+        mode => {
+          featured_stats: owp.featured_stats(mode),
+          top_heroes: owp.top_heroes(mode),
+          career_stats: owp.career_stats(mode),
+          stats: stats(owp, mode)
+        },
+      })
+    end
+    result
   end
 end
