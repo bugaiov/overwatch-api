@@ -29,7 +29,7 @@ class OverwatchParser
   end
 
   # TOP HEROES
-  def top_heros(mode)
+  def top_heroes(mode)
     stats_i = 0
     stats = %w(
       time_played
@@ -97,14 +97,11 @@ class ParsedPaclulator
     return if owp.career_stats(mode) == {}
     total_games = owp.career_stats(mode)['Game']['Games Played'].to_i
     games_won = owp.career_stats(mode)['Game']['Games Won'].to_i
-    total_score = owp.career_stats(mode)['Game']['Score']
     time_payed = owp.career_stats(mode)['Game']['Time Played']
     {
       total_games: total_games,
       win_loss: total_games - games_won,
       win_rate: games_won / total_games.to_f,
-      total_score: total_score,
-      score_min: time_payed.to_f * 60 / total_score.gsub(',','.').to_f,
       time_payed: time_payed
     }
   end
@@ -112,13 +109,13 @@ class ParsedPaclulator
     {
       quick_play: {
         featured_stats: owp.featured_stats('quick-play'),
-        top_heros: owp.top_heros('quick-play'),
+        top_heroes: owp.top_heroes('quick-play'),
         career_stats: owp.career_stats('quick-play'),
         stats: stats(owp, 'quick-play')
       },
       competitive_play: {
         featured_stats: owp.featured_stats('competitive-play'),
-        top_heros: owp.top_heros('competitive-play'),
+        top_heroes: owp.top_heroes('competitive-play'),
         career_stats: owp.career_stats('competitive-play'),
         stats: stats(owp, 'competitive-play')
       },

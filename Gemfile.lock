@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    byebug (9.0.5)
     coderay (1.1.1)
     method_source (0.8.2)
     mini_portile2 (2.1.0)
@@ -8,13 +9,13 @@ GEM
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
     pkg-config (1.1.7)
-    pry (0.10.3)
+    pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
-    puma (3.4.0)
+    puma (3.5.0)
     rack (2.0.1)
-    roda (2.15.0)
+    roda (2.16.0)
       rack
     shotgun (0.9.1)
       rack (>= 1.0)
@@ -24,6 +25,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   nokogiri
   pry
   puma

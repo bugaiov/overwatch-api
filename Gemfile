@@ -12,4 +12,5 @@ end
 group :development do
   gem 'shotgun'
   gem 'pry'
+  gem 'byebug'
 end
