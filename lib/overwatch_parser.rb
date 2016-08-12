@@ -6,7 +6,7 @@ class OverwatchParser
     battletag.gsub!('#','-') #TODO: F0002: Smarter, when # is in the nickname
     url = 'https://playoverwatch.com/en-us/career'
     profile_page = [url, platform, region, battletag].join('/')
-    unless region == 'xbl'
+    unless platform != 'xbl'
       profile_page = [url, platform, battletag].join('/')
     end
     puts "Opening: #{profile_page}"
