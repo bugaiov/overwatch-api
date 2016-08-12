@@ -6,6 +6,9 @@ class OverwatchParser
     battletag.gsub!('#','-') #TODO: F0002: Smarter, when # is in the nickname
     url = 'https://playoverwatch.com/en-us/career'
     profile_page = [url, platform, region, battletag].join('/')
+    unless platform != 'xbl'
+      profile_page = [url, platform, battletag].join('/')
+    end
     puts "Opening: #{profile_page}"
     @nokogiri_page = Nokogiri::HTML(open(profile_page))
   end
@@ -62,7 +65,7 @@ class OverwatchParser
         #todo: consider if done  # Cannot do it yet. Needs JS to parse after....
         results[key] << {
           xx.css('.content').text => {
-            achived: !x.css('.media-card').last.attributes.to_s.include?('m-disabled'),
+            achieved: !x.css('.media-card').last.attributes.to_s.include?('m-disabled'),
             img: x.css('img').last['src']
           }
         }
@@ -106,7 +109,7 @@ class ParsedPaclulator
     }
   end
   def self.everything(owp)
-    modes = ['quick-play', 'competative-play']
+    modes = ['quick-play', 'competetive-play']
     result = {
       nickname: owp.nickname,
       level: owp.level,
