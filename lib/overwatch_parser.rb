@@ -101,10 +101,12 @@ class ParsedPaclulator
     total_games = owp.career_stats(mode)['Game']['Games Played'].to_i
     games_won = owp.career_stats(mode)['Game']['Games Won'].to_i
     time_payed = owp.career_stats(mode)['Game']['Time Played']
+    win_rate = games_won.to_f / total_games.to_f rescue 0
+    win_rate = 0 unless win_rate.finite?
     {
       total_games: total_games,
       win_loss: total_games - games_won,
-      win_rate: games_won / total_games.to_f,
+      win_rate: win_rate,
       time_payed: time_payed
     }
   end
