@@ -1,5 +1,5 @@
 # Overwatch API
-> Overwatch JSON API writtern in Ruby
+> Overwatch JSON API written in Ruby
 
 ## Endpoints
 - `GET /profile/:platform/:region/:battletag`
